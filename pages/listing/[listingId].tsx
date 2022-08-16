@@ -26,7 +26,7 @@ const ListingPage: NextPage = () => {
 
   // Initialize the marketplace contract
   const marketplace = useMarketplace(
-    "0x277C0FB19FeD09c785448B8d3a80a78e7A9B8952" // Your marketplace contract address here
+    "0x97B95a076eC46279357961F19230717E223712FA" // Your marketplace contract address here
   );
 
   // Fetch the listing from the marketplace contract
@@ -50,7 +50,7 @@ const ListingPage: NextPage = () => {
     try {
       // Ensure user is on the correct network
       if (networkMismatch) {
-        switchNetwork && switchNetwork(4);
+        switchNetwork && switchNetwork(80001);
         return;
       }
 
@@ -59,7 +59,7 @@ const ListingPage: NextPage = () => {
         await marketplace?.direct.makeOffer(
           listingId, // The listingId of the listing we want to make an offer for
           1, // Quantity = 1
-          NATIVE_TOKENS[ChainId.Rinkeby].wrapped.address, // Wrapped Ether address on Rinkeby
+          NATIVE_TOKENS[ChainId.Mumbai].wrapped.address, // Wrapped Matic address on Polygon
           bidAmount // The offer amount the user entered
         );
       }
@@ -84,7 +84,7 @@ const ListingPage: NextPage = () => {
     try {
       // Ensure user is on the correct network
       if (networkMismatch) {
-        switchNetwork && switchNetwork(4);
+        switchNetwork && switchNetwork(80001);
         return;
       }
 
@@ -164,11 +164,16 @@ const ListingPage: NextPage = () => {
                   width: "fit-content",
                 }}
               >
-                Make Offer
+                👈Make Offer in {NATIVE_TOKENS[ChainId.Mumbai].symbol}
               </button>
             </div>
           </div>
         </div>
+      </div>
+      <div 
+      className={styles.pageContainer}
+      >
+      <p>{listing.asset.description}</p>
       </div>
     </div>
   );

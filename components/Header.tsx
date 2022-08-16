@@ -16,18 +16,27 @@ export default function Header() {
           <Link href="/" passHref role="button">
             <img
               src={`/logo.png`}
-              alt="Thirdweb Logo"
-              width={135}
+              alt="Dicesia Logo"
+              width={100}
               style={{ cursor: "pointer" }}
             />
           </Link>
         </div>
       </div>
+      
+      <div className={styles.left}>
+          <Link href="/create">
+            <a className={styles.mainButton} style={{ textDecoration: "none" }}>
+              Create A Listing
+            </a>
+          </Link>
+        </div>
+
       <div className={styles.right}>
         {address ? (
           <>
             <a
-              className={styles.secondaryButton}
+              className={styles.mainButton}
               onClick={() => disconnectWallet()}
             >
               Disconnect Wallet

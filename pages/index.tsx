@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
   // Connect your marketplace smart contract here (replace this address)
   const marketplace = useMarketplace(
-    "0x277C0FB19FeD09c785448B8d3a80a78e7A9B8952" // Your marketplace contract address here
+    "0x97B95a076eC46279357961F19230717E223712FA" // Your marketplace contract address here
   );
 
   const { data: listings, isLoading: loadingListings } =
@@ -24,32 +24,25 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1}>NFT Marketplace w/ thirdweb + Next.JS</h1>
+        <h1 className={styles.h1}>Dicesia Store</h1>
         <p className={styles.explain}>
-          Build an NFT marketplace using{" "}
+          If you are holder of the{" "}
           <b>
             {" "}
             <a
-              href="https://thirdweb.com/"
+              href="https://dicesia.com/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.purple}
             >
-              thirdweb
+              Dicesia NFT
             </a>
           </b>{" "}
-          to list your ERC721 and ERC1155 tokens for auction or for direct sale.
+          can list your ERC721 and ERC1155 tokens for auction or for direct sale.<br/>
+          You can also buy Dicesia tokens and their Holders directly from the Dicesia Store with only a 1.5% service fee.
         </p>
 
         <hr className={styles.divider} />
-
-        <div style={{ marginTop: 32, marginBottom: 32 }}>
-          <Link href="/create">
-            <a className={styles.mainButton} style={{ textDecoration: "none" }}>
-              Create A Listing
-            </a>
-          </Link>
-        </div>
 
         <div className="main">
           {
